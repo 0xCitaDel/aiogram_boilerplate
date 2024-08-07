@@ -45,13 +45,6 @@ class BotConfig:
     THROTTLING_LIMIT: int = int(getenv('THROTTLING_LIMIT', 5))
     
 @dataclass
-class CryptomusConfig:
-    """Settings of  payment"""
-
-    API_KEY: str = getenv('API_CRYPTOMUS_KEY', '')
-    MERCHANT_UUID: str = getenv('MERCHANT_UUID', '')
-
-@dataclass
 class AppSettings:
     """
     Base class that combines all configs in itself. All settings are
@@ -60,6 +53,5 @@ class AppSettings:
 
     db = DatabaseConfig()
     bot = BotConfig()
-    pay = CryptomusConfig()
 
 settings = AppSettings()
